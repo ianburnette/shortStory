@@ -39,12 +39,15 @@ public class buildingGenerator : MonoBehaviour {
 	void CreatePieces(){
 		for (int i = 0; i<floors+1; i++) {
 			if (i==0){
-				Instantiate(basePrefab, new Vector3(transform.position.x, transform.position.y+(floorOffset * (i+1)), transform.position.z), Quaternion.identity);
+				Transform floor = (Transform)Instantiate(basePrefab, new Vector3(transform.position.x, transform.position.y+(floorOffset * (i+1)), transform.position.z), Quaternion.identity);
+				floor.transform.parent = transform;
 			}
 			else if (i==floors){
-				Instantiate(roofPrefab, new Vector3(transform.position.x, transform.position.y+(floorOffset * (i+1)), transform.position.z), Quaternion.identity);
+				Transform floor = (Transform)Instantiate(roofPrefab, new Vector3(transform.position.x, transform.position.y+(floorOffset * (i+1)), transform.position.z), Quaternion.identity);
+				floor.transform.parent = transform;
 			}else{
-				Instantiate(floorPrefab, new Vector3(transform.position.x, transform.position.y+(floorOffset * (i+1)), transform.position.z), Quaternion.identity);
+				Transform floor = (Transform)Instantiate(floorPrefab, new Vector3(transform.position.x, transform.position.y+(floorOffset * (i+1)), transform.position.z), Quaternion.identity);
+				floor.transform.parent = transform;
 			}
 //			bases[i] = (Transform)Instantiate (baseTiles [baseIndices[i]], transform.position + basePositions[i], Quaternion.identity);
 //			bases[i].parent = transform;
