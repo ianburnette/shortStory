@@ -4,7 +4,11 @@ using System.Collections;
 public class junctionScript : MonoBehaviour {
 
 	public Vector3 offset = Vector3.up * 1.5f;
+	public Transform destinationBlock;
 	public Transform[] destinations;
+	public float rayDist;
+	//public Vector3 innerCurve1Ray, innerCurve2Ray, outerCurve1Ray, outerCurve2Ray, outerCurve3Ray;
+	public LayerMask junctionMask;
 
 	// Use this for initialization
 	void Start () {
@@ -12,47 +16,32 @@ public class junctionScript : MonoBehaviour {
 	}
 
 	void DetermineDestinations(){
-		if (transform.name == "topRightOfT") {
-			destinations = new Transform[2];
-			RaycastHit hitInfo;
-			Physics.Raycast(transform.position + offset, (-transform.right), out hitInfo, 3f);
-			destinations[0] = hitInfo.transform;
-			Physics.Raycast(transform.position + offset, (-transform.right + transform.up), out hitInfo, 4f);
-			destinations[1] = hitInfo.transform;
-		}if (transform.name == "topLeftOfT") {
-			destinations = new Transform[1];
-			RaycastHit hitInfo;
-			Physics.Raycast(transform.position + offset, -transform.right, out hitInfo, 50f);
-			destinations[0] = hitInfo.transform;
+		TIntersectionDeterminations ();
+	}
+
+	void TIntersectionDeterminations(){
+//		Transform topLeftOfTScript = transform.GetChild (0);
+//		Transform topRightOfTScript = transform.GetChild (1);
+//		Transform bottomRightOfTScript = transform.GetChild (2);
+//		Transform bottomLeftOfT = transform.GetChild (3);
+	}
+
+
+	void DrawDebugRays(){
+		foreach (Transform dest in destinations) {
+			Debug.DrawRay (transform.position+offset, dest.position - transform.position , Color.green);
 		}
-	}	
+	}
 
 	// Update is called once per frame
 	void Update () {
-		if (transform.name == "topLeftOfT") {
-			Debug.DrawRay (transform.position + offset, -transform.right * 100f, Color.yellow);
-		}if (transform.name == "topRightOfT") {
-			Debug.DrawRay (transform.position + offset, -transform.right *3f, Color.yellow);
-			Debug.DrawRay (transform.position + offset, (-transform.right + transform.up) *3f, Color.yellow);
-			RaycastHit hitInfo;
-			Physics.Raycast(transform.position + offset, (-transform.right), out hitInfo, 3f);
-			print (hitInfo.transform);
-		}if (transform.name == "bottomRightOfT") {
-			Debug.DrawRay (transform.position + offset, -transform.up * 2f, Color.yellow);
-			Debug.DrawRay (transform.position + offset, transform.right * 100f, Color.yellow);
-			//Debug.DrawRay (transform.position + offset, (-transform.right + transform.up) *3f, Color.yellow);
-		}if (transform.name == "bottomLeftOfT") {
-			Debug.DrawRay (transform.position + offset, transform.right * 2f, Color.yellow);
-			Debug.DrawRay (transform.position + offset, transform.up * 100f, Color.yellow);
-		}
-
-
+		DrawDebugRays ();
 	}
 
 	void OnTriggerEnter(Collider coll){
 		//print (coll.transform.tag);
 		if (coll.transform.tag == "aiCar") {
-			print ("car entered");
+			//print ("car entered");
 			int direction = 0;
 			if (destinations.Length>1){
 				direction = Random.Range(0,destinations.Length);
