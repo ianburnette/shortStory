@@ -8,6 +8,7 @@ public class PlayerDialogueController : MonoBehaviour {
 	public Text currentName;
 	public Text currentDialogue;
 	public Text indicator;
+	public bool inDialogue;
 
 	// Use this for initialization
 	void Start () {
@@ -26,10 +27,14 @@ public class PlayerDialogueController : MonoBehaviour {
 
 	public void ShowDialogue(){
 		panel.gameObject.SetActive (true);
+		inDialogue = true;
+		//indicator.gameObject.SetActive (false);
 	}
 
 	public void HideDialogue(){
 		panel.gameObject.SetActive (false);
+		inDialogue = false;
+		//indicator.gameObject.SetActive (true);
 	}
 
 	public void ShowIndicator(){

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class agentFollowSimple : MonoBehaviour {
 
-	public Transform destination;
+	public Transform target;
 	NavMeshAgent agent;
 
 	// Use this for initialization
@@ -13,6 +13,6 @@ public class agentFollowSimple : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		agent.destination = destination.position;
+		agent.destination = target.position;
 	}
 }
