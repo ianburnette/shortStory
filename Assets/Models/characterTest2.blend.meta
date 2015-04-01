@@ -51,6 +51,7 @@ ModelImporter:
     100086: upper_arm_L_0
     100088: upper_arm_R
     100090: upperArmCustomR
+    100092: Cylinder_000
     400000: //RootNode
     400002: chest
     400004: chest_0
@@ -97,10 +98,13 @@ ModelImporter:
     400086: upper_arm_L_0
     400088: upper_arm_R
     400090: upperArmCustomR
+    400092: Cylinder_000
     4300000: Cylinder_003
+    4300002: Cylinder_000
     7400000: Default Take
     9500000: //RootNode
     13700000: Cylinder_003
+    13700002: Cylinder_000
   materials:
     importMaterials: 1
     materialName: 0
