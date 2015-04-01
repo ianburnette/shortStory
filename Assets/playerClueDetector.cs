@@ -8,7 +8,7 @@ public class playerClueDetector : MonoBehaviour {
 	public float interactDistance = 3f;
 	public LayerMask clueMask;
 	public Transform currentClue;
-	PlayerDialogueController dialogueController;
+	public PlayerDialogueController dialogueController;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +29,7 @@ public class playerClueDetector : MonoBehaviour {
 		if (hitInfo.transform != null){// && hitInfo.transform != currentClue) {
 			hitInfo.transform.GetComponent<clueDialogue>().PlayerNear();
 			indicator.text = "Click to examine.";
-			if (dialogueController.inDialogue){
+			if (!dialogueController.inDialogue){
 				indicator.gameObject.SetActive(true);
 			}
 
@@ -37,8 +37,8 @@ public class playerClueDetector : MonoBehaviour {
 			currentClue.GetComponent<clueScript> ().ToggleUI (true);
 		} else if (hitInfo.transform == null) {
 			indicator.gameObject.SetActive(false);
-			if (hitInfo.transform == null && currentClue!=null || hitInfo.transform != currentClue && currentClue!=null) {
-
+			if ((hitInfo.transform == null && currentClue!=null) || (hitInfo.transform != currentClue && currentClue!=null)) {
+				print ("hit is " + hitInfo.transform);
 				currentClue.GetComponent<clueScript> ().ToggleUI (false);
 				hitInfo.transform.GetComponent<clueDialogue>().PlayerLeave();
 				currentClue = null;

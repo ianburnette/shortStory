@@ -13,6 +13,8 @@ public class agentFollowSimple : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		agent.destination = target.position;
+		if (target != null) {
+			agent.destination = target.position;
+		}
 	}
 }

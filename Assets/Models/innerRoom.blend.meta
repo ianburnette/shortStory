@@ -13,6 +13,17 @@ ModelImporter:
     100010: //RootNode
     100012: Group142_001
     100014: Group142_000
+    100016: ceiling
+    100018: door
+    100020: doorFrame
+    100022: doorKnob
+    100024: doorWindow
+    100026: floor
+    100028: skylightFrame
+    100030: skylightPane
+    100032: walls_002
+    100034: windowPanes
+    100036: windows
     400000: Group246
     400002: Group246_001
     400004: Group246_002
@@ -21,6 +32,17 @@ ModelImporter:
     400010: //RootNode
     400012: Group142_001
     400014: Group142_000
+    400016: ceiling
+    400018: door
+    400020: doorFrame
+    400022: doorKnob
+    400024: doorWindow
+    400026: floor
+    400028: skylightFrame
+    400030: skylightPane
+    400032: walls_002
+    400034: windowPanes
+    400036: windows
     2300000: Group246
     2300002: Group246_001
     2300004: Group246_002
@@ -28,6 +50,17 @@ ModelImporter:
     2300008: Group246_005
     2300010: Group142_001
     2300012: Group142_000
+    2300014: ceiling
+    2300016: door
+    2300018: doorFrame
+    2300020: doorKnob
+    2300022: doorWindow
+    2300024: floor
+    2300026: skylightFrame
+    2300028: skylightPane
+    2300030: walls_002
+    2300032: windowPanes
+    2300034: windows
     3300000: Group246
     3300002: Group246_001
     3300004: Group246_002
@@ -35,6 +68,17 @@ ModelImporter:
     3300008: Group246_005
     3300010: Group142_001
     3300012: Group142_000
+    3300014: ceiling
+    3300016: door
+    3300018: doorFrame
+    3300020: doorKnob
+    3300022: doorWindow
+    3300024: floor
+    3300026: skylightFrame
+    3300028: skylightPane
+    3300030: walls_002
+    3300032: windowPanes
+    3300034: windows
     4300000: Group246_003
     4300002: Group246_001
     4300004: Group246
@@ -42,6 +86,17 @@ ModelImporter:
     4300008: Group246_005
     4300010: Group142_001
     4300012: Group142_000
+    4300014: skylightFrame
+    4300016: skylightPane
+    4300018: doorWindow
+    4300020: doorFrame
+    4300022: floor
+    4300024: windows
+    4300026: doorKnob
+    4300028: ceiling
+    4300030: windowPanes
+    4300032: door
+    4300034: walls_002
     6400000: Group142_000
     6400002: Group142_001
     6400004: Group246
@@ -49,6 +104,17 @@ ModelImporter:
     6400008: Group246_002
     6400010: Group246_003
     6400012: Group246_005
+    6400014: ceiling
+    6400016: door
+    6400018: doorFrame
+    6400020: doorKnob
+    6400022: doorWindow
+    6400024: floor
+    6400026: skylightFrame
+    6400028: skylightPane
+    6400030: walls_002
+    6400032: windowPanes
+    6400034: windows
     7400000: Default Take
     9500000: //RootNode
   materials:
