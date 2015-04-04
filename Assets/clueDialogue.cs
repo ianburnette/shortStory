@@ -22,7 +22,8 @@ public class clueDialogue : MonoBehaviour {
 	}
 
 	public void PlayerLeave(){
-		canConverse = true;
+		print ("player left");
+		canConverse = false;
 	}
 
 	void Update(){
